@@ -6,6 +6,7 @@ import calvin from '../assets/calvin.png'
 import prada from '../assets/prada.png'
 import NewArrivalProduct from './NewArrival/NewArrivalProduct'
 import Review from './Cart/Review'
+import Dashboard from './UserProfile/Dashboard'
 
 
 function Home() {
@@ -60,6 +61,11 @@ function Home() {
                 </div>
                 <div>
                     <Review />
+                </div>
+
+                {/* DASHBOARD */}
+                <div>
+                    <Dashboard />
                 </div>
             </div>
 
