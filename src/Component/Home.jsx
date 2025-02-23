@@ -62,11 +62,7 @@ function Home() {
                 <div>
                     <Review />
                 </div>
-
-                {/* DASHBOARD */}
-                <div>
-                    <Dashboard />
-                </div>
+               
             </div>
 
             

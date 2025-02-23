@@ -9,12 +9,13 @@ import Cart from './Component/Cart/Cart.jsx'
 import  CartContext  from './Component/context/CartContext.jsx'
 import AddtoCart from './Component/Cart/AddtoCart.jsx'
 import CheckOutPage from './Component/Cart/CheckOutPage.jsx'
+import Dashboard from './Component/UserProfile/Dashboard.jsx'
 
 
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/ECommerce",
     element: <App />,
     children: [
       {
@@ -22,18 +23,22 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path: "/product",
+        path: "product",
         element: <Product />
       },
       {
-        path: "/cart/:id",
+        path: "user",
+        element: <Dashboard />
+      },
+      {
+        path: "cart/:id",
         element: <Cart />
       },
       {
-        path: "/addtocart",
+        path: "addtocart",
         element: <AddtoCart />
       },{
-        path:"/checkout",
+        path:"checkout",
         element:<CheckOutPage/>
       }
     ]

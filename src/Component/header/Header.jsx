@@ -35,13 +35,18 @@ function Header() {
                     <div className="nav-link">
                         <ul className={menuopen ? "show" : ""}>
                             <li className="menuItem">
-                                <Link to="/" className="nav-home nav-same" onClick={() => setMenuOpen(false)}>
+                                <Link to="" className="nav-home nav-same" onClick={() => setMenuOpen(false)}>
                                     Home
                                 </Link>
                             </li>
                             <li className="menuItem">
-                                <Link to="/product" className="nav-about nav-same" onClick={() => setMenuOpen(false)}>
+                                <Link to="product" className="nav-about nav-same" onClick={() => setMenuOpen(false)}>
                                     Product
+                                </Link>
+                            </li>
+                            <li className="menuItem">
+                                <Link to="user" className="nav-about nav-same" onClick={() => setMenuOpen(false)}>
+                                    User
                                 </Link>
                             </li>
                             <li className="menuItem">
@@ -50,23 +55,23 @@ function Header() {
                                 </button>
                             </li>
                             <li className="menuItem">
-                                <Link to="/addtocart" className="nav-contact nav-same" onClick={() => setMenuOpen(false)}>
-                                <i class="fas fa-shopping-cart">
-                                    <sup style={{ fontSize: "12px", color: "white" , marginLeft :"0.3rem" }}>{productQuantity}</sup>
-                                </i>
-                            </Link>
-                        </li>
-                    </ul>
+                                <Link to="addtocart" className="nav-contact nav-same" onClick={() => setMenuOpen(false)}>
+                                    <i class="fas fa-shopping-cart">
+                                        <sup style={{ fontSize: "12px", color: "white", marginLeft: "0.3rem" }}>{productQuantity}</sup>
+                                    </i>
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className={menuopen ? "responsiveLogo active" : "responsiveLogo"} onClick={handleChange}>
+                        <div className="topline"></div>
+                        <div className="secline"></div>
+                        <div className="thirdline"></div>
+                    </div>
                 </div>
-                <div className={menuopen ? "responsiveLogo active" : "responsiveLogo"} onClick={handleChange}>
-                    <div className="topline"></div>
-                    <div className="secline"></div>
-                    <div className="thirdline"></div>
-                </div>
-            </div>
-        </div >
+            </div >
 
-            { loginVisible && (
+            {loginVisible && (
                 <div className="inner_login">
                     <div className="main_login">
                         <button className="close-btn" onClick={() => setLoginVisible(false)}>✖</button>
@@ -82,7 +87,7 @@ function Header() {
                     </div>
                 </div>
             )
-}
+            }
         </>
     );
 }
