@@ -108,6 +108,7 @@ function Dashboard() {
       {/* Header Navigation */}
       <nav className="header-nav">
         
+        
         <ul className="nav-list">
           <li 
             className={`nav-item ${activeSection === 'Personal Details' ? 'active' : ''}`} 

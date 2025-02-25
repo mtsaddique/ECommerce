@@ -29,7 +29,7 @@ function Product() {
     useEffect(() => {
         let url =
             filter === "all"
-                ? `https://dummyjson.com/products?limit=0`
+                ? `https://dummyjson.com/products`
                 : `https://dummyjson.com/products/category/${filter}/?limit=0`;
 
         fetch(url)
@@ -42,10 +42,11 @@ function Product() {
 
     return (
         <>
+           
             <div className="product-nav-product">
-                <a onClick={handleFilter}>Mens-shirts</a>
-                <a onClick={handleFilter}>Womens-dresses</a>
-                <a onClick={handleFilter}>Motorcycle</a>
+                <button onClick={handleFilter}>Mens-shirts</button>
+                <button onClick={handleFilter}>Womens-dresses</button>
+                <button onClick={handleFilter}>Motorcycle</button>
                 <div className="filter">
                     <button className="filter-btn" onClick={handleChangeFilter}>
                         Filter
@@ -94,7 +95,7 @@ function Product() {
                                 <button className="add-to-cart" onClick={() => handleProduct(item)}>
                                     Add to Cart
                                 </button>
-                                <NavLink className="view-detail" to={`/cart/${item.id}`}>
+                                <NavLink className="view-detail" to={`cart/${item.id}`}>
                                     View detail
                                 </NavLink>
                             </div>

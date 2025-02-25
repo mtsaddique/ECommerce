@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, NavLink } from "react-router-dom";
 
 function ProductDetail() {
     const { id } = useParams();
@@ -21,7 +21,7 @@ function ProductDetail() {
                     <p className="product-detail__price">Price: ${product.price}</p>
                     <p className="product-detail__category">Category: {product.category}</p>
                     <button className="product-detail__btn">Add to Cart</button>
-                    <Link to="/" className="product-detail__back-link">Back to Products</Link>
+                    <NavLink to="/ECommerce/product" className="product-detail__back-link">Back to Products</NavLink>
                 </>
             ) : (
                 <p>Loading...</p>

@@ -32,6 +32,9 @@ function Header() {
                         <span style={{ color: "rgba(255, 0, 0, 0.877)" }}>E</span>-
                         <span style={{ color: "rgb(12, 164, 252)" }}>Commerce</span>
                     </div>
+                    <div className="searchBar">
+                        <input type="search" className="searchbarData" placeholder=" Search Any Product" />
+                    </div>
                     <div className="nav-link">
                         <ul className={menuopen ? "show" : ""}>
                             <li className="menuItem">
@@ -61,8 +64,10 @@ function Header() {
                                     </i>
                                 </Link>
                             </li>
+
                         </ul>
                     </div>
+                    
                     <div className={menuopen ? "responsiveLogo active" : "responsiveLogo"} onClick={handleChange}>
                         <div className="topline"></div>
                         <div className="secline"></div>
