@@ -6,6 +6,7 @@ function ProductDetail() {
     const [product, setProduct] = useState(null);
 
     useEffect(() => {
+        console.log("Fetching Product ID:", id);
         fetch(`https://dummyjson.com/products/${id}`)
             .then(res => res.json())
             .then(data => setProduct(data));

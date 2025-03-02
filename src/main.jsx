@@ -6,10 +6,11 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './Component/Home.jsx'
 import Product from './Component/Product.jsx'
 import Cart from './Component/Cart/Cart.jsx'
-import  CartContext  from './Component/context/CartContext.jsx'
+import CartContext from './Component/context/CartContext.jsx'
 import AddtoCart from './Component/Cart/AddtoCart.jsx'
 import CheckOutPage from './Component/Cart/CheckOutPage.jsx'
 import Dashboard from './Component/UserProfile/Dashboard.jsx'
+import LoginContext from './Component/context/LoginContext.jsx'
 
 
 
@@ -37,9 +38,9 @@ const router = createBrowserRouter([
       {
         path: "addtocart",
         element: <AddtoCart />
-      },{
-        path:"checkout",
-        element:<CheckOutPage/>
+      }, {
+        path: "checkout",
+        element: <CheckOutPage />
       }
     ]
   },
@@ -54,8 +55,10 @@ const Main = () => {
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <CartContext>
-      <Main />
-    </CartContext>
+    <LoginContext>
+      <CartContext>
+        <Main />
+      </CartContext>
+    </LoginContext>
   </StrictMode>
 )

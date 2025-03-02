@@ -1,14 +1,14 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { CartcontextApi } from "../context/CartContext";
+import { LoginAll } from "../context/LoginContext";
 
 function Header() {
     const [menuopen, setMenuOpen] = useState(false);
-    const [loginVisible, setLoginVisible] = useState(false);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const { productQuantity } = useContext(CartcontextApi)
-
+    const {setLoginCheck , loginVisible, setLoginVisible} = useContext(LoginAll)
     const handleChange = () => {
         setMenuOpen(!menuopen);
     };
@@ -17,6 +17,7 @@ function Header() {
         e.preventDefault();
         if (email === "admin" && password === "123456") {
             alert("Login success");
+            setLoginCheck(true);
             setLoginVisible(false);
         } else {
             alert("Login failed");

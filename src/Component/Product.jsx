@@ -1,16 +1,23 @@
 import React, { useEffect, useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { CartcontextApi } from "./context/CartContext";
+import { LoginAll } from "./context/LoginContext";
+
+
 
 function Product() {
     let [product, setProduct] = useState([]);
     let [filter, setFilter] = useState("all");
     let [menuState, setMenuState] = useState(false);
-
+    //// Use Context API to Login state
+    const {LoginCheck , setLoginCheck , setLoginVisible} = useContext(LoginAll);
     // Use Context API to manage cart state
     const { addProduct } = useContext(CartcontextApi);
 
+    
+
     const handleChangeFilter = () => {
+        
         setMenuState(!menuState);
     };
 
@@ -23,7 +30,13 @@ function Product() {
 
     // Add product to cart
     const handleProduct = (item) => {
-        addProduct(item);
+        if(LoginCheck){
+            addProduct(item);
+        }
+        else{
+            alert("Login Account");
+            setLoginVisible(true);
+        }
     };
 
     useEffect(() => {
@@ -95,7 +108,7 @@ function Product() {
                                 <button className="add-to-cart" onClick={() => handleProduct(item)}>
                                     Add to Cart
                                 </button>
-                                <NavLink className="view-detail" to={`cart/${item.id}`}>
+                                <NavLink className="view-detail" to={`/ECommerce/cart/${item.id}`}>
                                     View detail
                                 </NavLink>
                             </div>
