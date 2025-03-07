@@ -13,7 +13,7 @@ function AddtoCart() {
         setCart((prevCart) =>
             prevCart
                 .map(cartItem =>
-                    cartItem.id === item.id && cartItem.quantity > 1
+                    cartItem.id === item.id && cartItem.quantity >= 1
                         ? { ...cartItem, quantity: cartItem.quantity - 1 }
                         : cartItem
                 )
@@ -62,7 +62,7 @@ function AddtoCart() {
                             </div>
                         ))}
                         <div className="total-payment">
-                            <h2 style={{ fontSize: "16px", fontWeight: "normal" }}>
+                            <h2 style={{ fontSize: "16px", fontWeight: "normal" , marginBottom: "1.5rem"}}>
                                 Total Payment:<span className="payment-gap"> ${totalPayment.toFixed(2)}</span>
                             </h2>
                             <NavLink to="/checkout" className="remove-btn" >Check Out</NavLink>

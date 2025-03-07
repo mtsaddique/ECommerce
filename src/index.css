@@ -35,9 +35,9 @@ body {
 
 .nav-container {
   justify-content: space-around;
-  background-color: rgba(0, 0, 0, 0.747);
-  backdrop-filter: blur(200px);
-  z-index: 1000;  
+  background-color: transparent;
+  backdrop-filter: blur(100px);
+  z-index: 100;  
   box-sizing: border-box;
   padding: 1rem 0;
   position: fixed;
@@ -59,7 +59,7 @@ body {
 }
 
 .nav-same {
-  color: rgb(255, 255, 255);
+  color: rgb(63, 62, 62);
   text-decoration: none;
   border: none;
   background: none;
@@ -78,7 +78,7 @@ body {
 .thirdline {
   width: 25px;
   height: 2px;
-  background: white;
+  background: rgb(0, 0, 0);
   margin: 5px;
   transition: transform 0.3s ease;
 }
@@ -89,7 +89,7 @@ body {
 }
 
 .main-nav {
-  margin-bottom: 4em;
+  margin-bottom: 4.5em;
   width: 100%;
 }
 
@@ -540,6 +540,8 @@ body {
 
   .arrival-card {
     max-width: 100%;
+    width: 220px;
+    padding: 1rem;
     /* Adjust card width */
     /* max-width: 250px; */
     /* Prevent it from being too large */
@@ -731,7 +733,7 @@ body {
   gap: 20px;
   align-items: center;
   justify-content: center;
-  margin-top: 10px;
+  /* margin-top: 5em; */
   width: 100%;
 }
 
@@ -1080,6 +1082,54 @@ body {
 /* Total cart price */
 .total-quantity-price {
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .cart-container {
+    padding: 10px;
+  }
+
+  .cart-item {
+    padding: 10px;
+  }
+
+  .cart-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .cart-info {
+    font-size: 14px;
+  }
+
+  .cart-title {
+    font-size: 16px;
+  }
+
+  .cart-price {
+    font-size: 14px;
+  }
+
+  .cart-quantity {
+    font-size: 12px;
+  }
+
+  .remove-btn {
+    padding: 5px 8px;
+    font-size: 12px;
+  }
+
+  .incredec {
+    width: 60%;
+  }
+
+  .total-payment {
+    font-size: 14px;
+  }
+
+  .total-quantity-price {
+    font-size: 14px;
+  }
 }
 
 

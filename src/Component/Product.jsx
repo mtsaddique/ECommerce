@@ -56,7 +56,7 @@ function Product() {
     return (
         <>
            
-            <div className="product-nav-product">
+            <div className="product-nav-product" >
                 <button onClick={handleFilter}>Mens-shirts</button>
                 <button onClick={handleFilter}>Womens-dresses</button>
                 <button onClick={handleFilter}>Motorcycle</button>
