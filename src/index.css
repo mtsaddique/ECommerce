@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Grechen+Fuemen&display=swap');
 
-
+*::selection{
+  color: white;
+  background-color: pink;
+}
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   background-color: #ffffff;
@@ -12,6 +15,13 @@
   --secondary-color: rgb(221, 221, 243);
   --text-color: rgb(0, 0, 0);
   --btn-hover: #eeeeee;
+   --primary-color: #007bff; /* A nice blue for primary actions */
+  --secondary-color: #6c757d; /* A subtle grey for secondary text/borders */
+  --text-color: #333; /* Dark grey for general text */
+  --bg-color: #f8f9fa; /* Light background */
+  --card-bg: #fff; /* White background for the card */
+  --border-radius: 8px; /* Slightly rounded corners */
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
 
 
@@ -404,16 +414,17 @@ body {
   gap: 20px;
   justify-content: center;
   justify-items: center;
+  padding-bottom: 1rem;
 }
 
 .arrival-card {
   background: white;
-  padding: 1.5rem;
+  padding: 1.2rem;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.596);
   text-align: center;
   transition: transform 0.3s ease-in-out;
-  height: 290px;
+  height: 310px;
   width: 200px;
 }
 
@@ -1481,4 +1492,56 @@ ul {
     width: 120px;
     height: 120px;
   }
+}
+
+/* DashBoard Design */
+.login-prompt {
+  background-color: var(--card-bg);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+  max-width: 400px; /* Limit width for better readability on larger screens */
+  width: 90%; /* Responsive width */
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+.mad_con{
+  margin: 120px 0;
+}
+
+/* Heading */
+.login-prompt h2 {
+  color: var(--text-color);
+  font-size: 1.8em;
+  margin-bottom: 25px;
+  font-weight: 600; /* Slightly bolder for emphasis */
+}
+
+/* Login Button */
+.login-btn {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: var(--border-radius);
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+  outline: none; /* Remove default outline on focus */
+}
+
+.login-btn:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+.login-btn:active {
+  background-color: #004085; /* Even darker on click */
+  transform: translateY(0); /* Reset lift on click */
+}
+
+/* Focus state for accessibility */
+.login-btn:focus {
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Blue outline for focus */
 }

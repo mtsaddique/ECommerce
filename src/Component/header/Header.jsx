@@ -19,6 +19,7 @@ function Header() {
             alert("Login success");
             setLoginCheck(true);
             setLoginVisible(false);
+            
         } else {
             alert("Login failed");
         }
